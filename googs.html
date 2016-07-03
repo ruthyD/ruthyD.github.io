@@ -13,6 +13,9 @@
       #map {
         height: 100%;
       }
+	  #content {
+		background-color: green;
+	  }
     </style>
   </head>
   <body>
@@ -78,8 +81,11 @@
           map: map,
           title: 'Eagle'
         });
-        markerEagle.addListener('click', function() {
+        markerEagle.addListener('mouseover', function() {
           infowindowEagle.open(map, markerEagle);
+        });
+        markerEagle.addListener('mouseout', function() {
+          infowindowEagle.close();
         });
 		
 		
