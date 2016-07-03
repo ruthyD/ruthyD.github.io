@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var rick = {lat: 44.576446, lng: -123.280342};
+		var ruth = {lat: 44.576446, lng: -123.280342};
+		var jim = {lat: 44.460896, lng: -88.025029};
+		var rob = {lat: 44.441887, lng: -87.983856};
+		var bethy = {lat: 40.658166, lng: -73.990959};
+		var mags = {lat: 60.109823, lng: -149.473941};
+		var moms = {lat: 45.448630, lng: -88.785784};
+		var alex = {lat: 44.495321, lng: -88.008499};
+		var cmad = {lat: 35.050794, lng: -81.004924};
+		var dgreen = {lat: 36.686135, lng: -79.041626};
+		var staehly = {lat: 40.143864, lng: -104.957061}; 
+		var nita = {lat: 45.008299, lng: -89.212703};
+		var waldie = {lat: 38.506333, lng: -121.097798};
+		var troman = {lat: 41.532039, lng: -90.509772};
+		var tdrexler = {lat: 39.065891, lng: -104.840724};
+		var sdrexler = {lat: 39.708201, lng: -104.967280};
+		var lebanonKS = {lat: 39.827624, lng: -98.578783};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: lebanonKS
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+			'<img src="img/work/google/eagle.jpg" alt="Lorem ipsum dolor.">'+
+            '<h1 id="firstHeading" class="firstHeading">Eagle</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the '+
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+			'(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: rick,
+          map: map,
+          title: 'Eagle'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUIhrpCx-kzW_WSAwpAuAfsDGAp-QOQFM&callback=initMap">
+    </script>
+  </body>
+</html>
+<!-- AIzaSyCUIhrpCx-kzW_WSAwpAuAfsDGAp-QOQFM -->
