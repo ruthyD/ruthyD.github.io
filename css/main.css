@@ -536,7 +536,7 @@ header #logo2 a {
 	text-indent: -9999px;
 	display: block;
 	opacity: 1;
-	filter: alpha(opacity=100);
+	filter: alpha(opacity=65);
 	
 	-webkit-transition: opacity 0.25s ease-in-out 0s;	
 	   -moz-transition: opacity 0.25s ease-in-out 0s;
