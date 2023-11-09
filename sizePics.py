@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jul 02 21:56:59 2016
-
 @author: rick
 """
 import os
