@@ -3,15 +3,24 @@
 @author: rick
 """
 import os
-import Image
+from PIL import Image
+#
+# size = 400, 400
+#
+# for f in os.listdir('./img/work/full/'):
+#     print(f)
+#
+#     im = Image.open(f"./img/work/full/{f}")
+#     im.thumbnail(size, Image.ANTIALIAS)
+#     im.save(f"./img/work/thumbs/{f}", "JPEG")
 
-size = 128, 128
 
-for f in os.listdir('.'):
+size = 400, 400
 
-    im = Image.open(f)
+for f in os.listdir('./img/work/full/'):
+    print(f)
+
+    im = Image.open(f"./img/work/full/{f}")
     im.thumbnail(size, Image.ANTIALIAS)
-    im.save(f, "JPEG")
-
-
+    im.save(f"./img/work/google/{f}", "JPEG")
 
